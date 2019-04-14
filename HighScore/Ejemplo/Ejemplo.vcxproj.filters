@@ -18,10 +18,10 @@
     <ClCompile Include="Ejem.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\ProyectoHS\HighScore.cpp">
+    <ClCompile Include="..\CodigoFuente\HighScore.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\ProyectoHS\PlayerScore.cpp">
+    <ClCompile Include="..\CodigoFuente\PlayerScore.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
