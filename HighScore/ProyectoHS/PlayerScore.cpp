@@ -15,12 +15,21 @@ class PlayerScore{
 */
 #include "../Include/PlayerScore.h";
 PlayerScore::PlayerScore(){
-	nombre = new char[TAM_NOMBRE];
 	puntaje = 0;
+	nombre[0] = 'S';
+	nombre[1] = 'i';
+	nombre[2] = 'n';
+	nombre[3] = ' ';
+	nombre[4] = 'N';
+	nombre[5] = 'o';
+	nombre[6] = 'm';
+	nombre[7] = 'b';
+	nombre[8] = 'r';
+	nombre[9] = 'e';
+	nombre[10] = '\0';
 }
-PlayerScore::PlayerScore(int _puntaje, char* _nombre[TAM_NOMBRE]){
+PlayerScore::PlayerScore(int _puntaje, char _nombre[TAM_NOMBRE]){
 	puntaje = _puntaje;
-	nombre = *_nombre;
 }
 void PlayerScore:: SetPuntaje(int _puntaje) {
 	puntaje = _puntaje;
@@ -28,11 +37,10 @@ void PlayerScore:: SetPuntaje(int _puntaje) {
 int PlayerScore::GetPuntaje() {
 	return puntaje;
 }
-void PlayerScore::SetNombre(char* _nombre[TAM_NOMBRE]){
-	nombre = *_nombre;
+void PlayerScore::SetNombre(char _nombre[TAM_NOMBRE]){
+	*nombre = *_nombre;
 }
 PlayerScore::~PlayerScore(){
-	delete []nombre;
 }
 void PlayerScore::MostrarNombre() {
 	cout<<"El nombre del jugador es:"<<nombre;

@@ -8,13 +8,17 @@ class HighScore {
 	private:
 		PlayerScore *playerScore;
 		int tamArreglo;
+		int pos;
+		bool inicializado;
+	protected:
+	void OrdenarPuntajes();
 	public:
 		HighScore(int tamanio);
 		~HighScore();
-		void InsertarPuntaje();
-		void OrdenarPuntajes();
-		void MostrarMayorPuntaje();
-		void MostrarMenorPuntaje();
-		void MostrarPuntaje();
+		void InsertarPuntaje(int _puntaje, char _nombre[TAM_NOMBRE]);
+		void InicializarHighScore();
+		int MostrarMayorPuntaje();
+		int MostrarMenorPuntaje();
+		void MostrarPuntajes();
 };
 #endif
