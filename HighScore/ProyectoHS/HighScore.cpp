@@ -32,7 +32,6 @@ void HighScore::InicializarHighScore() {
 void HighScore::InsertarPuntaje(int _puntaje, char _nombre[TAM_NOMBRE]) {
 	if (inicializado) {
 		PlayerScore* ps = new PlayerScore(_puntaje, _nombre);
-		PlayerScore aux;
 		for (int i = 0; i < tamArreglo; i++) {
 			if (ps->GetPuntaje() > playerScore[i].GetPuntaje()) {
 				playerScore[i].SetPuntaje(ps->GetPuntaje());

@@ -30,6 +30,9 @@ PlayerScore::PlayerScore(){
 }
 PlayerScore::PlayerScore(int _puntaje, char _nombre[TAM_NOMBRE]){
 	puntaje = _puntaje;
+	for (int i = 0; i < TAM_NOMBRE; i++) {
+		nombre[i] = _nombre[i];
+	}
 }
 void PlayerScore:: SetPuntaje(int _puntaje) {
 	puntaje = _puntaje;
@@ -38,7 +41,9 @@ int PlayerScore::GetPuntaje() {
 	return puntaje;
 }
 void PlayerScore::SetNombre(char _nombre[TAM_NOMBRE]){
-	*nombre = *_nombre;
+	for (int i = 0; i < TAM_NOMBRE; i++) {
+		nombre[i] = _nombre[i];
+	}
 }
 PlayerScore::~PlayerScore(){
 }
