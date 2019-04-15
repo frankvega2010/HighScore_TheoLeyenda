@@ -54,3 +54,8 @@ void PlayerScore::CambiarNombre() {
 	cout << "Ingrese el nuvo nombre:";
 	cin.getline(nombre, TAM_NOMBRE);
 }
+void PlayerScore::BorrarNombre() {
+	for (int i = 0; i < TAM_NOMBRE; i++) {
+		nombre[i] = ' ';
+	}
+}

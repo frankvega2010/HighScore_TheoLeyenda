@@ -18,6 +18,7 @@ class PlayerScore{
 		void SetNombre(char _nombre[TAM_NOMBRE]);
 		void MostrarNombre();
 		void CambiarNombre();
+		void BorrarNombre();
 };
 
 #endif
