@@ -19,8 +19,8 @@ void main() {
 	//muestro los puntajes
 	HS->MostrarPuntajes();
 	cin.get();
-	//inserto otro jugador
-	cout << "Insertando otro jugador" << endl;
+	//inserto a otros jugadores
+	cout << "Insertando a otros jugadores" << endl;
 	nombreJugador2[0] = 'T';
 	nombreJugador2[1] = 'a';
 	nombreJugador2[2] = 't';
