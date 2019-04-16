@@ -9,6 +9,7 @@ void main() {
 	int puntajeJugador = 1500;
 	char nombreJugador[TAM_NOMBRE];
 	char nombreJugador2[TAM_NOMBRE];
+	char nombreJugador3[TAM_NOMBRE];
 	cout << "Ingrese el nombre del jugador:";
 	cin.getline(nombreJugador,TAM_NOMBRE);
 	//inicializo el HighScore
@@ -27,7 +28,14 @@ void main() {
 	nombreJugador2[4] = '\0';
 
 	puntajeJugador = 500;
+	nombreJugador3[0] = 'P';
+	nombreJugador3[1] = 'e';
+	nombreJugador3[2] = 'p';
+	nombreJugador3[3] = 'e';
+	nombreJugador3[4] = '\0';
 	HS->InsertarPuntaje(puntajeJugador, nombreJugador2);
+	puntajeJugador = 2500;
+	HS->InsertarPuntaje(puntajeJugador, nombreJugador3);
 	//vuelvo a mostrar los puntajes.
 	HS->MostrarPuntajes();
 	fflush(stdin);

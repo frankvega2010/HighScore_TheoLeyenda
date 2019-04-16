@@ -10,6 +10,7 @@ class HighScore {
 		int tamArreglo;
 		int pos;
 		bool inicializado;
+		bool primeraVez;
 	protected:
 	void OrdenarPuntajes();
 	public:

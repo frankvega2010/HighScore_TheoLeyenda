@@ -18,6 +18,7 @@ HighScore::HighScore(int _tam) {
 	tamArreglo = _tam;
 	pos = 0;
 	inicializado = false;
+	primeraVez = true;
 }
 HighScore::~HighScore() {
 	delete[] playerScore;
@@ -31,16 +32,28 @@ void HighScore::InicializarHighScore() {
 }
 void HighScore::InsertarPuntaje(int _puntaje, char _nombre[TAM_NOMBRE]) {
 	if (inicializado) {
+
 		PlayerScore* ps = new PlayerScore(_puntaje, _nombre);
+		PlayerScore* auxPs = new PlayerScore();
 		for (int i = 0; i < tamArreglo; i++) {
-			if (ps->GetPuntaje() > playerScore[i].GetPuntaje()) {
-				playerScore[i].SetPuntaje(ps->GetPuntaje());
-				playerScore[i].BorrarNombre();
-				playerScore[i].SetNombre(ps->nombre);
-				i = tamArreglo;
+			for (int j = 1; j < tamArreglo; j++) {
+				if (ps->GetPuntaje() > playerScore[i].GetPuntaje() && i < tamArreglo - 1) {
+					auxPs->SetPuntaje(playerScore[i].GetPuntaje());
+					auxPs->BorrarNombre();
+					auxPs->SetNombre(playerScore[i].nombre);
+					playerScore[i].SetPuntaje(ps->GetPuntaje());
+					playerScore[i].BorrarNombre();
+					playerScore[i].SetNombre(ps->nombre);
+					ps->SetPuntaje(auxPs->GetPuntaje());
+					ps->BorrarNombre();
+					ps->SetNombre(auxPs->nombre);
+				}
 			}
+			
+			
 		}
 		delete ps;
+		delete auxPs;
 		OrdenarPuntajes();
 	}
 	else
@@ -49,14 +62,19 @@ void HighScore::InsertarPuntaje(int _puntaje, char _nombre[TAM_NOMBRE]) {
 	}
 }
 void HighScore::OrdenarPuntajes() {
+	//cout << "ESTOY ORDENANDO:" << endl;
 	int aux;
+	char auxNombre[TAM_NOMBRE];
 	if (inicializado) {
 		for (int i = 0; i < tamArreglo; i++) {
 			for (int j = 1; j > tamArreglo; j++) {
 				if (playerScore[i].GetPuntaje() < playerScore[j].GetPuntaje()) {
 					aux = playerScore[i].GetPuntaje();
+					*auxNombre = *playerScore[i].nombre;
 					playerScore[i].SetPuntaje(playerScore[j].GetPuntaje());
+					*playerScore[i].nombre = *playerScore[j].nombre;
 					playerScore[j].SetPuntaje(aux);
+					*playerScore[j].nombre = *auxNombre;
 				}
 			}
 		}

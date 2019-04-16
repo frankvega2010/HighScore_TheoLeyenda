@@ -1,1 +1,3 @@
-﻿  Ejemplo.vcxproj -> C:\Users\Theo\Desktop\ImageCampus\carrera1(Parte2)-Desarrollo de videojuegos\Recursada\IntroduccionAlaProgramacionDeGraficos\HighScore_TheoLeyenda\HighScore\x64\Debug\Ejemplo.exe
+﻿  Ejem.cpp
+c:\users\theo\desktop\imagecampus\carrera1(parte2)-desarrollo de videojuegos\recursada\introduccionalaprogramaciondegraficos\highscore_theoleyenda\highscore\ejemplo\ejem.cpp(4): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+  Ejemplo.vcxproj -> C:\Users\Theo\Desktop\ImageCampus\carrera1(Parte2)-Desarrollo de videojuegos\Recursada\IntroduccionAlaProgramacionDeGraficos\HighScore_TheoLeyenda\HighScore\x64\Debug\Ejemplo.exe
